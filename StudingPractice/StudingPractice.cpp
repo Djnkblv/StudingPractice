@@ -126,6 +126,15 @@ int main()
 	
 */
 
+//Ввод данных с помощью cin:
+/*
+	int Var1, Var2;
+
+	cout << "Введите 2 числа: ";
+	cin >> Var1 >> Var2;
+	cout << "Число 1 = " << Var1 << endl;
+	cout << "Число 2 = " << Var2 << endl;
+*/
 
 
 }
