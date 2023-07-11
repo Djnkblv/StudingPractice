@@ -3,5 +3,6 @@ using namespace std;
 
 int main()
 {
-	cout << "Hello w#rld" << endl;
+	setlocale(LC_ALL, "Rus");
+	cout << "Привет епта!" << endl;
 }
