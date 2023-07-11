@@ -46,12 +46,34 @@ bool		1					Описывает логические значения (true/false
 
 */
 
+//Переменные:
+/*
+
+Переменная обазначается так: тип_данных имя_переменной
+
+Пример того, как объявлять(создавать) переменную:
+
+int c;
+double x;
+char words;
+bool false_or_true;
+
+Инициализация (добавить в переменную свои данные):
+
+c = 10;
+x = 2.5;
+words = 'w';
+bool = true;
+
+*/
 
 
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	
+
+//Escape последовательности, вывод стишка на консоль:	
+/*
 	cout << "Привет епта!\n";
 	cout << "wassap my nigga!\n\n";
 	cout << "\tБЕЙБИ\t\t КАК\t\t У\t\t ТЕБЯ\t\t ДИЛАА\n";
@@ -60,5 +82,25 @@ int main()
 	cout << "\n\t\t\tСпать пора, уснул бычок,\n\t\t\tЛег в коробку на бочок,\n";
 	cout << "\t\t\tСонный мишка лег в кровать,\n\t\t\tТолько слон не хочет спать,\n ";
 	cout << "\t\t\tГоловой кивает слон,\n\t\t\tОн слонихе шлет поклон.\n";
+*/
+
+	int Age, a, b;
+	Age = 10;
+	a = 1;
+	b = 5;
+	cout << "int:\n";
+	cout << Age << " " << a << b << endl;
+	
+	double d = 12.50;
+	cout << "double:\n" << d << endl;
+	
+	char word = 'w';
+	cout << "char:\n" << word << endl;
+
+	bool false_or_true = true;
+	cout << "bool:\n"<<false_or_true << "\nfalse = 0, true = 1" << endl;
+
+
+
 
 }
