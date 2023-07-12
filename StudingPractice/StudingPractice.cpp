@@ -436,10 +436,16 @@ int main()
 
 */
 
-//Одномерный массив array. :
+//Одномерный массив array. Цикл с массивом:
 
-	int arr[]{ 1,3,4,2 };
-	cout << arr[2] * arr[3] << endl;
+	const int size = 5;
+
+	int arr[size]{ 1,22,56,444,265 };
+
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << endl;
+	}
 
 
 
