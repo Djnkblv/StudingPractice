@@ -515,19 +515,26 @@ int main()
 
 */
 
-	//Двумерный массив: 
+	//Двумерный массив. Заполнение случайными числами: 
 
-	const int ROW = 3;	//Объявление констант, для строк и столбцов массива
-	const int COL = 5;
+	const int ROWS = 5;	//Объявление констант, для строк и столбцов массива
+	const int COLS = 8;
 
-	int arr[ROW][COL];
+	int arr[ROWS][COLS];
 
-	arr[1][1] = 55;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			arr[i][j] = rand() % 10;
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	
 
-	cout << arr[1][1] << " " << arr[0][3] << endl;
+	
 
-	int a;
-	a = 0;
 
 
 
