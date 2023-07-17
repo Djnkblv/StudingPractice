@@ -64,6 +64,17 @@ int zadachki()
 	cout << symb << endl;
 */
 
+/*
+//Программа должна переводить число, введенное с клавиатуры в метрах, в километры.
+
+	float meters, kilometers;
+
+	cout << "Введите количество метров: ";
+	cin >> meters;
+	kilometers = (meters / 1000);
+	cout << meters << " метров будет " << kilometers << " километров" << endl;
+*/
+
 	return 0;
 
 }
