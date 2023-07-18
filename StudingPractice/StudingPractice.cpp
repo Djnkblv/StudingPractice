@@ -264,13 +264,24 @@ int Sum(int a, int b)
 ВЫЗОВ:
 Sum (5, 6);					//В данном случае, функция вернет значение 11. 
 -------------------------------------------------------------------------------
-ПЕРЕДАЧА АРГУМЕНТОВ(параметров):
+ПЕРЕДАЧА МАССИВА:
 
 */
 
-int foo(int a)
+void fillArray(int arr[], const int size)
 {
-	return ++a;
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+	}
+}
+
+void printArray(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
 }
 
 
@@ -576,12 +587,15 @@ int main()
 	
 */
 
-	//Функции: 
+	//Функции. Заполнение массива: 
 	
-	int value = 1;
-	value = foo(value);
-	cout << value << endl;
-	
+	const int SIZE = 10;
+	int arr[SIZE];
+
+	fillArray(arr, SIZE);
+	printArray(arr, SIZE);
+
+	cout << endl;
 
 
 
