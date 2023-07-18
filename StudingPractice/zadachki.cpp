@@ -161,6 +161,121 @@ int zadachki()
 */
 
 
+//Объявить два целочисленных массива  с разными размерами и написать функцию, 
+//которая заполняет их элементы значениями и показывает на экран. 
+//Функция должна принимать два параметра – массив и его размер.
+/*
+void ScanArray(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+	}
+}
+
+void PrintArray(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+}
+
+//int main()
+{
+	const int SIZE1 = 5;
+	const int SIZE2 = 10;
+	int arr1[SIZE1], arr2[SIZE2];
+
+	cout << "Введите элементы массива 1: " << endl;
+	ScanArray(arr1, SIZE1);
+	cout << "Введите элементы массива 2: " << endl;
+	ScanArray(arr2, SIZE2);
+	cout << "\nМассив 1: " << endl;
+	PrintArray(arr1, SIZE1);
+	cout << "\nМассив 2: " << endl;
+	PrintArray(arr2, SIZE2);
+}
+*/
+
+
+//Необходимо создать двумерный массив 5 х 5. 
+//Далее написать функцию, которая заполнит его случайными числами от  30 до 60. 
+//Создать еще две функции, которые находят максимальный и минимальный элементы этого двумерного массива.
+/*
+const int SIZE = 5;
+
+
+void FillArray(int arr[][SIZE], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			arr[i][j] = 30 + rand() % 31;
+		}
+	}
+}
+
+void PrintArray(int arr[][SIZE], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+int FindMinValue(int arr[][SIZE], const int size)
+{
+	int min = arr[0][0];
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			if (min > arr[i][j])
+			{
+				min = arr[i][j];
+			}
+		}
+	}
+	return min;
+}
+
+int FindMaxValue(int arr[][SIZE], const int size)
+{
+	int max = arr[0][0];
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			if (max < arr[i][j])
+			{
+				max = arr[i][j];
+			}
+		}
+	}
+	return max;
+}
+
+//int main()
+{
+
+	int arr[SIZE][SIZE];
+
+	FillArray(arr, SIZE);
+	cout << "Матрица 5х5 со случайными значениями: " << endl;
+	PrintArray(arr, SIZE);
+	cout << "\nМинимальный элемент в матрице = " << FindMinValue(arr, SIZE) << endl;
+	cout << "Максимальный элемент в матрице = " << FindMaxValue(arr, SIZE) << endl;
+}
+*/
+
+
+
 	return 0;
 
 }
