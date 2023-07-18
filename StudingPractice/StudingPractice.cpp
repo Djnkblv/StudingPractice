@@ -610,7 +610,7 @@ void printArray(int arr[], const int size)
 }
 */
 
-	//Прототипы функции:
+	
 
 	Foo();
 
