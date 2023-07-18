@@ -264,24 +264,17 @@ int Sum(int a, int b)
 ВЫЗОВ:
 Sum (5, 6);					//В данном случае, функция вернет значение 11. 
 -------------------------------------------------------------------------------
-ПЕРЕДАЧА МАССИВА:
+ПРОТОТИПЫ ФУНКЦИИ:
+Прототипы необходимы для того, чтобы вызывать функцию из любого места, даже после вызова в main;
+void (int a, int b);
+Прототипы должны объявляться перед функцией main, можно без параметров, а само тело писать где угодно;
+Пока не понимаю для чего это нужно;
 
 */
 
-void fillArray(int arr[], const int size)
+void Foo()
 {
-	for (int i = 0; i < size; i++)
-	{
-		arr[i] = rand() % 10;
-	}
-}
-
-void printArray(int arr[], const int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << arr[i] << "\t";
-	}
+	cout << "Я функция, меня вызвали!" << endl;
 }
 
 
@@ -588,7 +581,25 @@ int main()
 */
 
 	//Функции. Заполнение массива: 
-	
+	/*
+void fillArray(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+	}
+}
+
+void printArray(int arr[], const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+}
+
+//int main()
+{
 	const int SIZE = 10;
 	int arr[SIZE];
 
@@ -596,8 +607,12 @@ int main()
 	printArray(arr, SIZE);
 
 	cout << endl;
+}
+*/
 
+	//Прототипы функции:
 
+	Foo();
 
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }
