@@ -294,24 +294,7 @@ double Sum (double a, double b)
 
 
 */
- 
-int Sum(int a, int b)
-{
-	cout << "Вариант функции Sum с int'овым типом данных" << endl;
-	return a + b;
-}
 
-double Sum(double a, double b)
-{
-	cout << "Вариант функции Sum с double'овым типом данных" << endl;
-	return a + b;
-}
-
-int Sum(int a, int b, int c)
-{
-	cout << "Вариант функции Sum с 3-мя параметрами" << endl;
-	return a + b + c;
-}
 
 int main()
 {
@@ -652,10 +635,37 @@ void printArray(int arr[], const int size)
 */
 
 	//Перегрузка функции:
+	/*
+
+int Sum(int a, int b)
+{
+	cout << "Вариант функции Sum с int'овым типом данных" << endl;
+	return a + b;
+}
+
+double Sum(double a, double b)
+{
+	cout << "Вариант функции Sum с double'овым типом данных" << endl;
+	return a + b;
+}
+
+int Sum(int a, int b, int c)
+{
+	cout << "Вариант функции Sum с 3-мя параметрами" << endl;
+	return a + b + c;
+}
+
+int main()
+{
 
 	cout << Sum(2, 50) << endl;
 	cout << Sum(2.5, 2.7) << endl;
 	cout << Sum(20, 30, 2) << endl;
+}
+*/
+
+
+
 
 
 
