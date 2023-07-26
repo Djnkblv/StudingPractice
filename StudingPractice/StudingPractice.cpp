@@ -404,24 +404,21 @@ void Foo2(int& a)
 
 Foo2(value);		//При вызове функции, не нужен (&) при присваивании значения, в отличии от указателя;
 
+=================================================================================
+ВОЗВРАТ НЕСКОЛЬКИХ ЗНАЧЕНИЙ ФУНКЦИИ ЧЕРЕЗ ССЫЛКИ:
+
+
 
 */
 
-void Foo (int a)		//Передача параметров просто так;
-{
-	a = 1;
-}
+template <typename T >
 
-void Foo2(int& a)		//Передача параметров через ссылку;
+void Swap(T& a, T& b)
 {
-	a = 2;
+	T c = a;
+	a = b;
+	b = c;
 }
-
-void Foo3(int* a)		//Передача параметров через указатель;
-{
-	*a = 3;
-}
-
 
 
 
@@ -878,7 +875,7 @@ main ()
 
 	*/
 
-	//Ссылки:
+	//Ссылки. ДЗ:
 
 	/*
 	
@@ -891,25 +888,61 @@ main ()
 	aRef = 903;
 
 	cout << aRef << endl;
+	====================================================
+	ПЕРЕДАЧА ПАРАМЕТРОВ В ФУНКЦИЮ:
+		void Foo (int a)		//Передача параметров просто так;
+	{
+		a = 1;
+	}
+
+	void Foo2(int& a)		//Передача параметров через ссылку;
+	{
+		a = 2;
+	}
+
+	void Foo3(int* a)		//Передача параметров через указатель;
+	{
+		*a = 3;
+	}
+	int main () 
+
+	{
+		int value = 5;
+		cout << "value = " << value << endl << endl;
+
+		cout << "Foo " << endl;
+		Foo(value);											//Передача параметров просто так;
+		cout << "value = " << value << endl << endl;
+
+		cout << "Foo2 " << endl;
+		Foo2(value);										//Передача параметров через ссылку;
+		cout << "value = " << value << endl << endl;
+
+		cout << "Foo3 " << endl;
+		Foo3(&value);										//Передача параметров через указатель;
+		cout << "value = " << value << endl << endl;
+
+	}
 	
 	*/
-
-
-	int value = 5;
-	cout << "value = " << value << endl << endl;
-
-	cout << "Foo " << endl;
-	Foo(value);											//Передача параметров просто так;
-	cout << "value = " << value << endl << endl;
 	
-	cout << "Foo2 " << endl;
-	Foo2(value);										//Передача параметров через ссылку;
-	cout << "value = " << value << endl << endl;
+//написать ШАБЛОННУЮ функцию которая меняет местами значения 2 - х переменных с помощью ССЫЛОК.
 
-	cout << "Foo3 " << endl;
-	Foo3(&value);										//Передача параметров через указатель;
-	cout << "value = " << value << endl << endl;
 
+double a = 50.2;
+double b = 22.22;
+
+cout << "a = " << a << endl;
+cout << "b = " << b << endl;
+
+cout << "\nswapping...\n" << endl;
+
+Swap(a, b);
+
+cout << "a = " << a << endl;
+cout << "b = " << b << endl;
+
+	
 
 
 
