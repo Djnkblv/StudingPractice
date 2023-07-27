@@ -19,7 +19,13 @@ delete pa;
 NULL и nullptr:
 
 - NULL = 0;
+- nulptr позволяет удалить данные из указателя, вне зависимости от типа данных, лучше чем просто 0;
+==================================================================================
+Динамический массив:
 
+- В отличии от статического массива, динаический можно менять во время работы программы;
+
+int *arr = new int[]
 
 */
 
@@ -29,13 +35,19 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 
-	int* pa = new int;
-	*pa = 10;
-	cout << *pa << endl;
-	delete pa;
+	int size ;
+	cout << "enter array size: ";
+	cin >> size;
+	int* arr = new int[size];
 
-	pa = nullptr;
-	cout << pa << endl;
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+		cout << arr[i] << "\t";
+		cout << arr + i << endl;
+	}
+
+	delete[] arr;
 
 
 
