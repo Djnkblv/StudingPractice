@@ -548,6 +548,73 @@ int FindMaxValue(int arr[][SIZE], const int size)
 	delete[] arr;
 */
 
+//Дан двумерный массив и два числа : i и j.Поменяйте в массиве столбцы с номерами i и j.
+//Программа получает на вход размеры массива n и m, не превосходящие 100, затем элементы массива, 
+//затем числа i и j.
+/*
+	int rows, cols;
+	cout << "enter rows: ";
+	cin >> rows;
+	cout << "enter cols: ";
+	cin >> cols;
+	if (rows > 100 || cols > 100)
+	{
+		cout << "incorrect value rows or cols" << endl;
+		return 0;
+	}
+
+	int** arr = new int* [rows];
+
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols];
+	}
+
+	cout << "Matrix: " << endl;
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arr[i][j] = rand() % 100;
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+	int m, n;
+	cout << "enter m and n: ";
+	cin >> m >> n;
+
+	for (int i = 0; i < rows; i++)
+	{
+		int s = 0;
+		s = arr[i][m];
+		arr[i][m] = arr[i][n];
+		arr[i][n] = s;
+	}
+
+	cout << "matrix with swap: " << endl;
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+
+
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+
+	delete[] arr;
+
+	*/
 
 	return 0;
 

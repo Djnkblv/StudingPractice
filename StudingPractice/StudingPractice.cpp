@@ -109,6 +109,88 @@ int main()
 	delete[] arr;
 	*/
 
-	
+
+	//Дан двумерный массив размером n×m(n и m не превосходят 1000).Симметричный ему относительно 
+	//главной диагонали массив называется транспонированным к данному.Он имеет размеры m×n : 
+	//строки исходного массива становятся столбцами транспонированного, 
+	//столбцы исходного массива становятся строками транспонированного.
+	//Для данного массива постройте транспонированный массив и выведите его на экран
+
+	int rows, cols;
+	cout << "enter rows: ";
+	cin >> rows;
+	cout << "enter cols: ";
+	cin >> cols;
+	if (rows > 1000 || cols > 1000)
+	{
+		cout << "incorrect value rows or cols" << endl;
+		return 0;
+	}
+
+	int** arr = new int* [rows];
+
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols];
+	}
+
+	cout << "Matrix: " << endl;
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arr[i][j] = rand() % 20;
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+	/////////////////////////////////////////
+	//создаем второй массив
+	int s = rows;
+	rows = cols;
+	cols = s;
+
+	cout << "trans Matrix: " << endl;
+
+	int** arrTrans = new int* [rows];
+
+	for (int i = 0; i < rows; i++)
+	{
+		arrTrans[i] = new int[cols];
+	}
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arrTrans[i][j] = arr[j][i];
+			cout << arrTrans[i][j] << "\t";
+		}
+		cout << endl;
+	}
+
+
+
+	//////////////////////////////////////
+	//Удаление массивов
+	for (int i = 0; i < cols; i++)
+	{
+		delete[]arr[i];
+	}
+
+	delete[]arr;
+
+	for (int i = 0; i < rows; i++)
+	{
+		delete[]arrTrans[i];
+	}
+
+	delete[]arrTrans;
+
+
+
+
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }
