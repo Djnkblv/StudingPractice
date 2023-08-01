@@ -16,6 +16,7 @@ delete pa;
 - Оператор new выделяет место в опаративной памяти;
 - ключевое слово delete позволяет удалить выделянную память;
 - Если написали new, нужно обязательно писать delete, чтобы не было утечки данных;
+
 ==================================================================================
 NULL и nullptr:
 
@@ -24,11 +25,14 @@ NULL и nullptr:
 ==================================================================================
 Динамический массив:
 
-- В отличии от статического массива, динаический можно менять во время работы программы;
+- В отличии от статического массива, динамический можно менять во время работы программы;
 
-int *arr = new int[]
+int *arr = new int[10]	//операция взятия адреса ( & ) к массивам не применяется
 
 delete []arr;		//Удаляем данные в памяти;
+
+Расшифровка
+- new (выдели память) int (для хранения целых чисел) [10] (в количестве 10).
 ===================================================================================
 Двумерный динамический массив:
 
@@ -38,6 +42,48 @@ int **arr = new int* [rows];
 
 */
 
+int* MakeArr(int* PtrArr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		PtrArr = new int[size];
+		return PtrArr;
+	}
+}
+
+void InArr(int* PtrArr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		PtrArr[i] = i;
+	}
+}
+
+void PrintArr(int* PtrArr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << PtrArr[i] << "\t";
+	}
+}
+
+void SwapArr(int* PtrArr, int size)
+{
+	for (int i = 0; i < size-1; i+=2)
+	{
+		int value = PtrArr[i];
+		PtrArr[i] = PtrArr[i + 1];
+		PtrArr[i + 1] = value;
+	}
+}
+
+int* DeleteArr(int* PtrArr)
+{
+	delete[]PtrArr;
+	PtrArr = 0;
+
+	return PtrArr;
+}
 
 
 int main()
@@ -110,87 +156,92 @@ int main()
 	*/
 
 
-	//Дан двумерный массив размером n×m(n и m не превосходят 1000).Симметричный ему относительно 
-	//главной диагонали массив называется транспонированным к данному.Он имеет размеры m×n : 
-	//строки исходного массива становятся столбцами транспонированного, 
-	//столбцы исходного массива становятся строками транспонированного.
-	//Для данного массива постройте транспонированный массив и выведите его на экран
+	//Объявите указатель на массив типа double и предложите пользователю выбрать его размер.
+	//Далее напишите четыре функции : 
+	//первая должна выделить память для массива, вторая  – заполнить ячейки данными, 
+	//третья – показать данные на экран, четвертая – освободить занимаемую память.
+	//Программа должна предлагать пользователю продолжать работу(создавать новые динамические массивы) или выйти из программы.
 
-	int rows, cols;
-	cout << "enter rows: ";
-	cin >> rows;
-	cout << "enter cols: ";
-	cin >> cols;
-	if (rows > 1000 || cols > 1000)
+	/*
+	
+double* ArrIn(double* PtrArr, int size)
+{
+	PtrArr = new double[size];
+	return PtrArr;
+}
+
+void ArrValue(double* PtrArr, int size)
+{
+	for (int i = 0; i < size; i++)
 	{
-		cout << "incorrect value rows or cols" << endl;
-		return 0;
+		PtrArr[i] = rand() % 30 * 0.2;
 	}
+}
 
-	int** arr = new int* [rows];
-
-	for (int i = 0; i < rows; i++)
+void ArrPrint(double* PtrArr, int size)
+{
+	for (int i = 0; i < size; i++)
 	{
-		arr[i] = new int[cols];
+		cout << PtrArr[i] << "\t";
 	}
+	cout << endl;
+}
 
-	cout << "Matrix: " << endl;
+double* ArrDelete(double* PtrArr)
+{
+	delete[]PtrArr;
+	PtrArr = 0;
 
-	for (int i = 0; i < rows; i++)
+	return PtrArr;
+}
+
+
+	int main() 
 	{
-		for (int j = 0; j < cols; j++)
-		{
-			arr[i][j] = rand() % 20;
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
+	
+	double* pArr = 0;
+	int userAnswer = 0;
 
-	/////////////////////////////////////////
-	//создаем второй массив
-	int s = rows;
-	rows = cols;
-	cols = s;
 
-	cout << "trans Matrix: " << endl;
-
-	int** arrTrans = new int* [rows];
-
-	for (int i = 0; i < rows; i++)
+	do
 	{
-		arrTrans[i] = new int[cols];
+		int size;
+		cout << "enter array size: ";
+		cin >> size;
+
+		pArr = ArrIn(pArr, size);
+
+		ArrValue(pArr, size);
+
+		cout << "array: ";
+
+		ArrPrint(pArr, size);
+
+		pArr = ArrDelete(pArr);
+
+		cout << "Repeat?\t1 - yes \t0 - no ";
+		cin >> userAnswer;
+	} while (userAnswer != 0);
+	
+	return 0;
 	}
+	*/
 
-	for (int i = 0; i < rows; i++)
-	{
-		for (int j = 0; j < cols; j++)
-		{
-			arrTrans[i][j] = arr[j][i];
-			cout << arrTrans[i][j] << "\t";
-		}
-		cout << endl;
-	}
+	//Объявите указатель на массив типа int и выделите память для 12 - ти элементов.
+	//Необходимо написать функцию, которая поменяет значения четных и нечетных ячеек массива.
 
+	int* pArr = 0;
 
+	pArr = MakeArr(pArr, 12);
+	InArr (pArr, 12);
+	cout << "Arr:" << endl;
+	PrintArr(pArr, 12);
 
-	//////////////////////////////////////
-	//Удаление массивов
-	for (int i = 0; i < cols; i++)
-	{
-		delete[]arr[i];
-	}
+	cout << "\narray with swap: " << endl;
+	SwapArr(pArr, 12);
+	PrintArr(pArr, 12);
 
-	delete[]arr;
-
-	for (int i = 0; i < rows; i++)
-	{
-		delete[]arrTrans[i];
-	}
-
-	delete[]arrTrans;
-
-
-
+	pArr = DeleteArr(pArr);
 
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }

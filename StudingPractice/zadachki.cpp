@@ -80,87 +80,6 @@ int zadachki()
 */
 
 
-//Объявить двумерный массив и заполнить его построчно с клавиатуры. 
-//После заполнения – показать заполненную матрицу на экран и 
-//посчитать сумму элементов отдельно в каждом столбце и каждой строке.
-/*
-	const int ROWS = 3;
-	const int COLS = 4;
-	int arr[ROWS][COLS];
-	int sumRows = 0;
-	int sumCols = 0;
-
-	cout << "Заполните массив: " << endl;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cin >> arr[i][j];
-		}
-	}
-
-	cout << "Матрица: " << endl;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++)
-		{
-			cout << arr[i][j] << "\t";
-			sumRows += arr[i][j];
-		}
-		cout <<"Сумма строки = " << sumRows << endl;
-		sumRows = 0;
-	}
-
-	for (int i = 0; i < COLS; i++)
-	{
-		cout << "=\t";
-	}
-	cout << endl;
-
-	for (int i = 0; i < COLS; i++)
-	{
-		for (int j = 0; j < ROWS; j++)
-		{
-			sumCols += arr[j][i];
-		}
-		cout << sumCols << "\t";
-		sumCols = 0;
-	}
-*/
-
-
-//Заполнить двумерный массив случайными  числами от 10  до 100. 
-//Посчитать сумму элементов отдельно в каждой строке и определить номер строки,  в которой эта сумма максимальна.
-/*
-	const int MATRIXSIZE = 5;
-	int sumRows = 0;
-	int maxSum = 0;
-	int arr[MATRIXSIZE][MATRIXSIZE];
-
-	cout << "Матрица с случайными значениями: " << endl;
-
-	for (int i = 0; i < MATRIXSIZE; i++)
-	{
-		for (int j = 0; j < MATRIXSIZE; j++)
-		{
-			arr[i][j] = 10 + rand() % 91;
-			cout << arr[i][j] << "\t";
-			sumRows += arr[i][j];
-		}
-		cout << "Сумма строки = " << sumRows << endl;
-
-		if (maxSum < sumRows)
-		{
-			maxSum = sumRows;
-		}
-
-		sumRows = 0;
-	}
-
-	cout <<"\nМаксимальная сумма строки = " << maxSum << endl;
-*/
-
-
 //Программа должна нарисовать домик. Строительным материалом являются: 
 //символы слэша (прямой /, обратный , вертикальный |), знак минуса, символ подчёркивания.
 /*
@@ -281,7 +200,7 @@ else if (a == b) {
 
 
 
-
+					//ФУНКЦИИ
 
 
 //Объявить два целочисленных массива  с разными размерами и написать функцию, 
@@ -319,6 +238,41 @@ void PrintArray(int arr[], const int size)
 	cout << "\nМассив 2: " << endl;
 	PrintArray(arr2, SIZE2);
 }
+*/
+
+
+
+
+				//ДВУМЕРНЫЕ МАССИВЫ
+//Заполнить двумерный массив случайными  числами от 10  до 100. 
+//Посчитать сумму элементов отдельно в каждой строке и определить номер строки,  в которой эта сумма максимальна.
+/*
+	const int MATRIXSIZE = 5;
+	int sumRows = 0;
+	int maxSum = 0;
+	int arr[MATRIXSIZE][MATRIXSIZE];
+
+	cout << "Матрица с случайными значениями: " << endl;
+
+	for (int i = 0; i < MATRIXSIZE; i++)
+	{
+		for (int j = 0; j < MATRIXSIZE; j++)
+		{
+			arr[i][j] = 10 + rand() % 91;
+			cout << arr[i][j] << "\t";
+			sumRows += arr[i][j];
+		}
+		cout << "Сумма строки = " << sumRows << endl;
+
+		if (maxSum < sumRows)
+		{
+			maxSum = sumRows;
+		}
+
+		sumRows = 0;
+	}
+
+	cout <<"\nМаксимальная сумма строки = " << maxSum << endl;
 */
 
 
@@ -397,6 +351,56 @@ int FindMaxValue(int arr[][SIZE], const int size)
 }
 */
 
+
+//Объявить двумерный массив и заполнить его построчно с клавиатуры. 
+//После заполнения – показать заполненную матрицу на экран и 
+//посчитать сумму элементов отдельно в каждом столбце и каждой строке.
+/*
+	const int ROWS = 3;
+	const int COLS = 4;
+	int arr[ROWS][COLS];
+	int sumRows = 0;
+	int sumCols = 0;
+
+	cout << "Заполните массив: " << endl;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+
+	cout << "Матрица: " << endl;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+			sumRows += arr[i][j];
+		}
+		cout <<"Сумма строки = " << sumRows << endl;
+		sumRows = 0;
+	}
+
+	for (int i = 0; i < COLS; i++)
+	{
+		cout << "=\t";
+	}
+	cout << endl;
+
+	for (int i = 0; i < COLS; i++)
+	{
+		for (int j = 0; j < ROWS; j++)
+		{
+			sumCols += arr[j][i];
+		}
+		cout << sumCols << "\t";
+		sumCols = 0;
+	}
+*/
+
+
 //Найдите индексы первого вхождения максимального элемента.
 //Программа получает на вход размеры массива n и m, затем n строк по m чисел в каждой.n и m не превышают 100.
 //Выведите два числа : номер строки и номер столбца, в которых стоит наибольший элемент в двумерном массиве.
@@ -462,6 +466,7 @@ int FindMaxValue(int arr[][SIZE], const int size)
 
 	delete[]arr;
 */
+
 
 //Дано нечетное число n, не превосходящее 15. 
 //Создайте двумерный массив из n×n элементов, заполнив его символами "." 
@@ -548,6 +553,7 @@ int FindMaxValue(int arr[][SIZE], const int size)
 	delete[] arr;
 */
 
+
 //Дан двумерный массив и два числа : i и j.Поменяйте в массиве столбцы с номерами i и j.
 //Программа получает на вход размеры массива n и m, не превосходящие 100, затем элементы массива, 
 //затем числа i и j.
@@ -615,6 +621,94 @@ int FindMaxValue(int arr[][SIZE], const int size)
 	delete[] arr;
 
 	*/
+
+
+//Дан двумерный массив размером n×m(n и m не превосходят 1000).Симметричный ему относительно 
+//главной диагонали массив называется транспонированным к данному.Он имеет размеры m×n : 
+//строки исходного массива становятся столбцами транспонированного, 
+//столбцы исходного массива становятся строками транспонированного.
+//Для данного массива постройте транспонированный массив и выведите его на экран
+/*
+		int rows, cols;
+		cout << "enter rows: ";
+		cin >> rows;
+		cout << "enter cols: ";
+		cin >> cols;
+		if (rows > 1000 || cols > 1000)
+		{
+			cout << "incorrect value rows or cols" << endl;
+			return 0;
+		}
+
+		int** arr = new int* [rows];
+
+		for (int i = 0; i < rows; i++)
+		{
+			arr[i] = new int[cols];
+		}
+
+		cout << "Matrix: " << endl;
+
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < cols; j++)
+			{
+				arr[i][j] = rand() % 20;
+				cout << arr[i][j] << "\t";
+			}
+			cout << endl;
+		}
+
+		/////////////////////////////////////////
+		//создаем второй массив
+		int s = rows;
+		rows = cols;
+		cols = s;
+
+		cout << "trans Matrix: " << endl;
+
+		int** arrTrans = new int* [rows];
+
+		for (int i = 0; i < rows; i++)
+		{
+			arrTrans[i] = new int[cols];
+		}
+
+		for (int i = 0; i < rows; i++)
+		{
+			for (int j = 0; j < cols; j++)
+			{
+				arrTrans[i][j] = arr[j][i];
+				cout << arrTrans[i][j] << "\t";
+			}
+			cout << endl;
+		}
+
+
+
+		//////////////////////////////////////
+		//Удаление массивов
+		for (int i = 0; i < cols; i++)
+		{
+			delete[]arr[i];
+		}
+
+		delete[]arr;
+
+		for (int i = 0; i < rows; i++)
+		{
+			delete[]arrTrans[i];
+		}
+
+		delete[]arrTrans;
+		*/
+
+
+
+
+
+
+
 
 	return 0;
 
