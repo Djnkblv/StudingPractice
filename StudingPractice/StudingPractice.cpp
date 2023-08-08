@@ -42,22 +42,28 @@ int **arr = new int* [rows];
 
 */
 
-void FillArray(int* const arr, const int size)
+void FillArray(int** const arr, const int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = rand() % 10;
+		for (int j = 0; j < size; j++)
+		{
+			arr[i][j] = 10 + rand() % 41;
+		}
 	}
 }
 
 
-void ShowArray(int* const arr, const int size)
+void ShowArray(int** const arr, const int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		cout << arr[i] << "\t";
+		for (int j = 0; j < size; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
 	}
-	cout << endl;
 }
 
 int main()
@@ -138,12 +144,30 @@ int main()
 	и выделить в ней новую память, после этого циклом пробежаться по массиву 2
 	и скопировать из нее данные в массив 1;
 
+	//ФУНКЦИИ:
+	
+	void FillArray(int* const arr, const int size)	//Функция заполнения случайными числами
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+	}
+}
 
-	
-	
-	*/
-	
-	int size = 10;
+
+void ShowArray(int* const arr, const int size)		//Функция вывода массива в консоль
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+int main()
+{
+
+int size = 10;
 
 	int* firstArray = new int[size];
 	int* secondArray = new int[size];
@@ -159,10 +183,10 @@ int main()
 	cout << "secondArray:\t";
 	ShowArray(secondArray, size);
 
-	delete[]firstArray;
+	delete[]firstArray;		//Удаляем данные из массива
 
-	firstArray = new int[size];
-	for (int i = 0; i < size; i++)
+	firstArray = new int[size];	//выделяем новую память
+	for (int i = 0; i < size; i++)		//и копируем значения второго массива
 	{
 		firstArray[i] = secondArray[i];
 	}
@@ -179,6 +203,41 @@ int main()
 
 	delete[]firstArray;
 	delete[]secondArray;
+
+	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
+}
+	
+	*/
+	
+
+	//Объявить и заполнить двумерный динамический массив случайными числами от 10 до 50. 
+	//Показать его на экран.Для заполнения и показа на экран написать отдельные функции. 
+	//(подсказка: функции должны принимать три параметра – указатель на динамический массив, 
+	//количество строк, количество столбцов).Количество строк и столбцов выбирает пользователь.
+
+	int size;
+
+	cout << "Enter size of Matrix: ";
+	cin >> size;
+
+	int** matrix = new int* [size];
+	for (int i = 0; i < size; i++)
+	{
+		matrix[i] = new int[size];
+	}
+
+
+	cout << "Matrix: " << endl;
+	FillArray(matrix, size);
+	ShowArray(matrix, size);
+
+
+	for (int i = 0; i < size; i++)
+	{
+		delete[]matrix[i];
+	}
+
+	delete[]matrix;
 
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }
