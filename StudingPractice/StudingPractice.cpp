@@ -42,8 +42,23 @@ int **arr = new int* [rows];
 
 */
 
+void FillArray(int* const arr, const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+	}
+}
 
 
+void ShowArray(int* const arr, const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
 
 int main()
 {
@@ -115,78 +130,55 @@ int main()
 	*/
 
 
-	//Объявите указатель на массив типа double и предложите пользователю выбрать его размер.
-	//Далее напишите четыре функции : 
-	//первая должна выделить память для массива, вторая  – заполнить ячейки данными, 
-	//третья – показать данные на экран, четвертая – освободить занимаемую память.
-	//Программа должна предлагать пользователю продолжать работу(создавать новые динамические массивы) или выйти из программы.
+	//Копирование динамического массива:
 
 	/*
+	- Для того, чтобы скопировать один массив в другой,
+	необходимо сначала удалить старые данные из массива 1
+	и выделить в ней новую память, после этого циклом пробежаться по массиву 2
+	и скопировать из нее данные в массив 1;
+
+
 	
-double* ArrIn(double* PtrArr, int size)
-{
-	PtrArr = new double[size];
-	return PtrArr;
-}
-
-void ArrValue(double* PtrArr, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		PtrArr[i] = rand() % 30 * 0.2;
-	}
-}
-
-void ArrPrint(double* PtrArr, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << PtrArr[i] << "\t";
-	}
-	cout << endl;
-}
-
-double* ArrDelete(double* PtrArr)
-{
-	delete[]PtrArr;
-	PtrArr = 0;
-
-	return PtrArr;
-}
-
-
-	int main() 
-	{
 	
-	double* pArr = 0;
-	int userAnswer = 0;
-
-
-	do
-	{
-		int size;
-		cout << "enter array size: ";
-		cin >> size;
-
-		pArr = ArrIn(pArr, size);
-
-		ArrValue(pArr, size);
-
-		cout << "array: ";
-
-		ArrPrint(pArr, size);
-
-		pArr = ArrDelete(pArr);
-
-		cout << "Repeat?\t1 - yes \t0 - no ";
-		cin >> userAnswer;
-	} while (userAnswer != 0);
-	
-	return 0;
-	}
 	*/
-
 	
+	int size = 10;
+
+	int* firstArray = new int[size];
+	int* secondArray = new int[size];
+
+
+
+
+	FillArray(firstArray, size);
+	FillArray(secondArray, size);
+
+	cout << "firstArray:\t";
+	ShowArray(firstArray, size);
+	cout << "secondArray:\t";
+	ShowArray(secondArray, size);
+
+	delete[]firstArray;
+
+	firstArray = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		firstArray[i] = secondArray[i];
+	}
+
+	cout << "====================================\nКопирование массива произошло" << endl;
+
+	cout << "firstArray:\t";
+	ShowArray(firstArray, size);
+	cout << "secondArray:\t";
+	ShowArray(secondArray, size);
+
+
+
+
+	delete[]firstArray;
+	delete[]secondArray;
 
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }

@@ -770,6 +770,76 @@ int FindMaxValue(int arr[][SIZE], const int size)
 			*/
 
 
+//Объявите указатель на массив типа double и предложите пользователю выбрать его размер.
+//Далее напишите четыре функции : 
+//первая должна выделить память для массива, вторая  – заполнить ячейки данными, 
+//третья – показать данные на экран, четвертая – освободить занимаемую память.
+//Программа должна предлагать пользователю продолжать работу(создавать новые динамические массивы) или выйти из программы.
+
+/*
+
+		double* ArrIn(double* PtrArr, int size)
+		{
+			PtrArr = new double[size];
+			return PtrArr;
+		}
+
+		void ArrValue(double* PtrArr, int size)
+		{
+			for (int i = 0; i < size; i++)
+			{
+				PtrArr[i] = rand() % 30 * 0.2;
+			}
+		}
+
+		void ArrPrint(double* PtrArr, int size)
+		{
+			for (int i = 0; i < size; i++)
+			{
+				cout << PtrArr[i] << "\t";
+			}
+			cout << endl;
+		}
+
+		double* ArrDelete(double* PtrArr)
+		{
+			delete[]PtrArr;
+			PtrArr = 0;
+
+			return PtrArr;
+		}
+
+
+			int main()
+			{
+
+			double* pArr = 0;
+			int userAnswer = 0;
+
+
+			do
+			{
+				int size;
+				cout << "enter array size: ";
+				cin >> size;
+
+				pArr = ArrIn(pArr, size);
+
+				ArrValue(pArr, size);
+
+				cout << "array: ";
+
+				ArrPrint(pArr, size);
+
+				pArr = ArrDelete(pArr);
+
+				cout << "Repeat?\t1 - yes \t0 - no ";
+				cin >> userAnswer;
+			} while (userAnswer != 0);
+
+			return 0;
+			}
+			*/
 
 
 
