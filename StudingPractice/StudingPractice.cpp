@@ -42,48 +42,7 @@ int **arr = new int* [rows];
 
 */
 
-int* MakeArr(int* PtrArr, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		PtrArr = new int[size];
-		return PtrArr;
-	}
-}
 
-void InArr(int* PtrArr, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		PtrArr[i] = i;
-	}
-}
-
-void PrintArr(int* PtrArr, int size)
-{
-	for (int i = 0; i < size; i++)
-	{
-		cout << PtrArr[i] << "\t";
-	}
-}
-
-void SwapArr(int* PtrArr, int size)
-{
-	for (int i = 0; i < size-1; i+=2)
-	{
-		int value = PtrArr[i];
-		PtrArr[i] = PtrArr[i + 1];
-		PtrArr[i + 1] = value;
-	}
-}
-
-int* DeleteArr(int* PtrArr)
-{
-	delete[]PtrArr;
-	PtrArr = 0;
-
-	return PtrArr;
-}
 
 
 int main()
@@ -227,21 +186,7 @@ double* ArrDelete(double* PtrArr)
 	}
 	*/
 
-	//Объявите указатель на массив типа int и выделите память для 12 - ти элементов.
-	//Необходимо написать функцию, которая поменяет значения четных и нечетных ячеек массива.
-
-	int* pArr = 0;
-
-	pArr = MakeArr(pArr, 12);
-	InArr (pArr, 12);
-	cout << "Arr:" << endl;
-	PrintArr(pArr, 12);
-
-	cout << "\narray with swap: " << endl;
-	SwapArr(pArr, 12);
-	PrintArr(pArr, 12);
-
-	pArr = DeleteArr(pArr);
+	
 
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }
