@@ -39,32 +39,110 @@ delete []arr;		//Удаляем данные в памяти;
 int **arr = new int* [rows];
 
 - Для двумерного массива, нужно **, что означает указатель на другой указатель;
+=====================================================================================
+Удаление и добавление элементов в динамического массива:
+
+ - Для добавления или удаления элементов массива, создается новый массив,
+который копирует данные из старого и добавляет новые, либо удаляет;
+(см. в практике)
+
+
+
+
 
 */
 
-void FillArray(int** const arr, const int size)
+
+void FillArray(int* const arr, const int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		for (int j = 0; j < size; j++)
-		{
-			arr[i][j] = 10 + rand() % 41;
-		}
+		arr[i] = 10 + rand() % 41;
 	}
 }
 
-
-void ShowArray(int** const arr, const int size)
+void ShowArray(int* const arr, const int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		for (int j = 0; j < size; j++)
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
+		cout << arr[i] << "\t";
 	}
+	cout << endl;
 }
+
+
+//Функция, добавляющая последний элемент в массиве;
+void push_back(int*& arr, int& size, const int value)	
+//*&arr -  (указатель на ссылку) дает возможность подменить адрес указатаеля
+{
+	int* newArray = new int[size + 1];
+	for (int i = 0; i < size; i++)
+	{
+		newArray[i] = arr[i];
+	}
+
+	newArray[size] = value;
+
+	size++;					//Увеличиваем переменную, так как он указан как ссылка, чтобы выводить новый массив;
+
+	delete[]arr;
+
+	arr = newArray;			//подменяем адрес на который указывает указатель;
+}
+
+
+
+//Функция, которая удаляет последний элемент из массива:
+void pop_back(int*& arr, int& size)
+{
+	size--;
+	int* newArray = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		newArray[i] = arr[i];
+	}
+
+	delete[]arr;
+
+	arr = newArray;
+
+}
+
+//Функция, добавляющая элемент в начало массива:
+void push_start(int*& arr, int& size, const int value)
+{
+	int* newArray = new int[size + 1];
+	for (int i = 1; i < size+1; i++)
+	{
+		newArray[i] = arr[i-1];
+	}
+
+	newArray[0] = value;
+
+	size++;					
+
+	delete[]arr;
+
+	arr = newArray;
+}
+
+//Функция, которая удаляет первый элемент массива:
+void pop_start(int*& arr, int& size)
+{
+	size--;
+	int* newArray = new int[size];
+	for (int i = 1; i < size+1; i++)
+	{
+		newArray[i-1] = arr[i];
+	}
+
+	delete[]arr;
+
+	arr = newArray;
+
+}
+
+
 
 int main()
 {
@@ -209,35 +287,49 @@ int size = 10;
 	
 	*/
 	
+	//Добавление нового элемента в массив:
 
-	//Объявить и заполнить двумерный динамический массив случайными числами от 10 до 50. 
-	//Показать его на экран.Для заполнения и показа на экран написать отдельные функции. 
-	//(подсказка: функции должны принимать три параметра – указатель на динамический массив, 
-	//количество строк, количество столбцов).Количество строк и столбцов выбирает пользователь.
+	int size = 5;
+	int* arr = new int[size];
+	FillArray(arr, size);
 
-	int size;
+	ShowArray(arr, size);
 
-	cout << "Enter size of Matrix: ";
-	cin >> size;
+	cout << "=================================================" << endl;
 
-	int** matrix = new int* [size];
-	for (int i = 0; i < size; i++)
-	{
-		matrix[i] = new int[size];
-	}
+	//увеличиваем массив:
+	push_back(arr, size, 5002);
+
+	ShowArray(arr, size);
 
 
-	cout << "Matrix: " << endl;
-	FillArray(matrix, size);
-	ShowArray(matrix, size);
+	//уменьшаем массив:
+	pop_back(arr, size);
+
+	ShowArray(arr, size);
+
+	cout << "================================================" << endl;
+
+	//добавление и удаление элементов в начале:
+	push_start(arr, size, 2005);
+
+	ShowArray(arr, size);
+
+	pop_start(arr, size);
+
+	ShowArray(arr, size);
 
 
-	for (int i = 0; i < size; i++)
-	{
-		delete[]matrix[i];
-	}
+	
 
-	delete[]matrix;
+
+
+
+
+
+
+	delete[]arr;
+
 
 	system("pause");	//Функция для того, чтобы консоль сразу не закрывалась вне Visual Studio
 }

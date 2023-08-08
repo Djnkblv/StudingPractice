@@ -842,6 +842,71 @@ int FindMaxValue(int arr[][SIZE], const int size)
 			*/
 
 
+//Объявить и заполнить двумерный динамический массив случайными числами от 10 до 50. 
+//Показать его на экран.Для заполнения и показа на экран написать отдельные функции. 
+//(подсказка: функции должны принимать три параметра – указатель на динамический массив, 
+//количество строк, количество столбцов).Количество строк и столбцов выбирает пользователь.
+
+/*
+		ФУНКЦИИ:
+		void FillArray(int** const arr, const int size)
+		{
+			for (int i = 0; i < size; i++)
+			{
+				for (int j = 0; j < size; j++)
+				{
+					arr[i][j] = 10 + rand() % 41;
+				}
+			}
+		}
+
+
+		void ShowArray(int** const arr, const int size)
+		{
+			for (int i = 0; i < size; i++)
+			{
+				for (int j = 0; j < size; j++)
+				{
+					cout << arr[i][j] << "\t";
+				}
+				cout << endl;
+			}
+		}
+		=====================================================
+		int main()
+		{
+
+
+			int size;
+
+			cout << "Enter size of Matrix: ";
+			cin >> size;
+
+			int** matrix = new int* [size];
+			for (int i = 0; i < size; i++)
+			{
+				matrix[i] = new int[size];
+			}
+
+
+			cout << "Matrix: " << endl;
+			FillArray(matrix, size);
+			ShowArray(matrix, size);
+
+
+			for (int i = 0; i < size; i++)
+			{
+				delete[]matrix[i];
+			}
+
+			delete[]matrix;
+			*/
+
+
+
+
+
+
 
 
 	return 0;
