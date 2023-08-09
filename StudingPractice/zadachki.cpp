@@ -903,7 +903,221 @@ int FindMaxValue(int arr[][SIZE], const int size)
 			*/
 
 
+					//УКАЗАТЕЛИ
 
+//Создать двумерный массив 5х5, заполнить его случайными числами от 10 до 99 и вывести на экран.
+//Поменять местами максимальный элемент каждой строки с первым элементом в соответствующей строке.
+//Задачу решить с помощью указателей.
+
+/*
+					//ФУНКЦИИ:
+void FillArray(int** arr, const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			arr[i][j] = 10 + rand() % 90;
+		}
+	}
+}
+
+void ShowArray(int** arr, const int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+
+void Swap(int** arr, const int size)
+{
+	int max = 0;
+	int jm;
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			if (max < arr[i][j])
+			{
+				max = arr[i][j];
+				jm = j;
+			}
+		}
+		arr[i][jm] = arr[i][0];
+		arr[i][0] = max;
+		max = 0;
+	}
+}
+
+int main()
+{
+	int size = 5;
+
+	int** matrix = new int* [size];
+
+	for (int i = 0; i < size; i++)
+	{
+		matrix[i] = new int[size];
+	}
+
+	FillArray(matrix, size);
+	ShowArray(matrix, size);
+
+	cout << "Функция поменяла местами первый элемент и элемент с максимальным значением" << endl;
+
+	Swap(matrix, size);
+	ShowArray(matrix, size);
+
+
+	for (int i = 0; i < size; i++)
+	{
+		delete[]matrix[i];
+	}
+
+	delete[]matrix;
+
+}
+
+
+
+*/
+
+
+//Задача на умножение матриц.Пользователь произвольно задает размерность двух матриц и заполняет значениями вручную.
+//Не забывайте, что необходимо выделить соответствующие участки памяти для матриц, 
+//которые будет заполнять пользователь и для третьей итоговой матрицы.Далее отобразите на экране 
+//обе заполненные матрицы и итоговую матрицу(их воспроизведение).
+
+/*
+				//ФУНКЦИИ:
+
+void FillArray(int** arr, int rows, int cols)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		cout << "Enter " << i + 1 << " row" << endl;
+
+		for (int j = 0; j < cols; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+}
+
+void ShowArray(int** arr, int rows, int cols)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
+void MultMatrix(int** arr1, int** arr2, int** arr3, int rows, int cols)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			for (int k = 0; k < cols;k++)
+			{
+				arr3[i][j] += arr1[i][k] * arr2[k][j];
+			}
+		}
+
+
+	}
+}
+
+
+int main()
+{
+
+
+	int cols, rows;
+	cout << "Enter size rows of matrix: ";
+	cin >> rows;
+	cout << "Enter size cols of matrix: ";
+	cin >> cols;
+
+	int** matrix1 = new int* [rows];
+
+	for (int i = 0; i < rows; i++)
+	{
+		matrix1[i] = new int [cols];
+	}
+
+	int** matrix2 = new int* [rows];
+
+	for (int i = 0; i < rows; i++)
+	{
+		matrix2[i] = new int[cols];
+	}
+
+	int** matrix3 = new int* [rows];
+
+	for (int i = 0; i < rows; i++)
+	{
+		matrix3[i] = new int[cols];
+	}
+
+
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			matrix3[i][j] = 0;
+		}
+	}
+
+
+	cout << "Enter value of Matrix 1: " << endl;
+	FillArray(matrix1, rows, cols);
+	cout << "Matrix 1:" << endl;
+	ShowArray(matrix1, rows, cols);
+
+	cout << "Enter value of Matrix 2: " << endl;
+	FillArray(matrix2, rows, cols);
+	cout << "Matrix 2:" << endl;
+	ShowArray(matrix2, rows, cols);
+
+	MultMatrix(matrix1, matrix2, matrix3, rows, cols);
+	cout << "MultiMatrix: " << endl;
+	ShowArray(matrix3, rows, cols);
+
+
+
+	for (int i = 0; i < rows; i++)
+	{
+		delete[]matrix1[i];
+	}
+
+	delete[]matrix1;
+
+	for (int i = 0; i < rows; i++)
+	{
+		delete[]matrix2[i];
+	}
+
+	delete[]matrix2;
+
+	for (int i = 0; i < rows; i++)
+	{
+		delete[]matrix3[i];
+	}
+
+	delete[]matrix3;
+}
+*/
 
 
 
