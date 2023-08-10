@@ -104,18 +104,7 @@ int **arr = new int* [rows];
 
 
 					//ФУНКЦИИ:
-int StrLen(char* str)
-{
-	for (int i = 0; i!='\0'; i++)
-	{
 
-	}
-}
-
-void foo(const char* str)
-{
-	cout << strlen(str) << endl;
-}
 
 
 int main()
@@ -440,10 +429,30 @@ int main()
 
 	//Строки и указатели. ДЗ:
 
+	/*
+
+ 					//ФУНКЦИИ:
+int StrLength(const char* str)
+{
+	int counter = 0;
+	//Пока значение строки с итераторатором counter не равен \0 (концу строки), прибавляем ему 1;
+	while (str[counter]!='\0')
+	{
+		counter++;
+	}
+
+	return counter;
+}
+
+
+int main()
+{
 	//Написать свою реализацию функции strlen (Считает количество символов в строке);
 
-	
+	const char* str = "Hello!";
 
+	cout << StrLength(str) << endl;
+	*/
 
 
 
