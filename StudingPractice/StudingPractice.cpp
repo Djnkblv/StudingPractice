@@ -89,6 +89,8 @@ int **arr = new int* [rows];
 
 
 
+
+
 					//ФУНКЦИИ:
 
 
@@ -400,6 +402,21 @@ int main()
 	a = (double)a;
 	cout << a << "\n" << b << endl;
 	*/
+
+	//Таблица символов ASCII:
+	
+	/*
+	cout << sizeof(char) << endl;
+
+	//выводим в консоль кодировку, от 0 до 255 в типе char:
+	for (int i = 0; i <= 255; i++)
+	{
+		cout << "code = " << i << "\t char = " << (char)i << endl;
+	}
+	*/
+
+
+
 
 
 
