@@ -72,11 +72,22 @@ int **arr = new int* [rows];
 
 	cout << strlen(string) << endl;		//Вывод количества символов в переменной string;
  
- 
+*/
 
+//Преобразование типов в стиле С:
 
+/*
+- Для преобразования типа данных переменной в другой тип данных, перед названием переменной в скобках пишем новый тип данных;
+
+	double a = 33.3;
+	cout << (int)a << endl;		//из double преобразовали в int;
+
+	a = (char)a;	//Преобразовали переменную а из int в char;
 
 */
+
+
+
 
 					//ФУНКЦИИ:
 
@@ -363,6 +374,7 @@ int main()
 
 	//Строки. Строковый массив:
 
+	/*
 	char symbol = 'a';
 	cout << symbol << endl;
 
@@ -373,6 +385,21 @@ int main()
 	char string2[] = "Hello world!";
 	cout << string2 << endl;
 	cout << strlen(string2) << endl;
+	*/
+
+	//Преобразование типов в стиле С:
+
+	/*
+	int a = 33.5;
+	
+	double b = 444.6565;
+
+	cout << a/b << endl;
+
+	b = (int)b;
+	a = (double)a;
+	cout << a << "\n" << b << endl;
+	*/
 
 
 
