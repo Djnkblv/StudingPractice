@@ -202,7 +202,7 @@ void main (int argc char* argv[])
 //Классы:
 
 /*
-- Класс это пользовательский тип данных т.е это тип данных, которую я могу создать сам
+- Класс это пользовательский тип данных т.е это тип данных, которую я создал сам
 - Класс создается перед функцией main();
 
 	class Human				//создали класс (class название_класса)
@@ -214,7 +214,7 @@ void main (int argc char* argv[])
 	string name;
 
 
-	}
+	};						//После завершения класса, необходимо ставить ';'
 
 	int main()----------------------------------------------------------------------
 
@@ -226,9 +226,35 @@ void main (int argc char* argv[])
 
 	cout << firstMan.age << endl;
 	cout << firstMan.name << endl;
+====================================================================================
+МЕТОДЫ И ФУНКЦИИ КЛАССА:
 
+- Методы и функции класса представляют из себя одно и тоже;
+- Функция класса определяется внутри тела класса;
+- Функция внутри класса может взаимодействовать с переменными внутри того же класса
 
+	class Human
+	{
+	public:
 
+	int age;
+	char name;
+	int weight;
+
+	void Print()				//Определяем функцию в классе
+	{
+		cout << name << endl;		
+	}
+	
+	
+	};
+
+	int main()
+	{
+
+	firstMan.Print();		//Вызов функции для конкретного объекта в классе 
+
+	}
 */
 
 					//ФУНКЦИИ и КЛАССЫ:
@@ -237,22 +263,20 @@ class Human				//создали класс (class название_класса)
 {
 public:					//Определяем модицикатор доступа (обязательно)
 	int age;
+	string name;		//Определяем свойства класса
+	int weight;
 
-	string name;		//Определяем свойства класса	
+	void Print()		//Прописываем функцию внутри класса
+	{
+		cout << "Имя: " << name << "\nВес: " << weight << "\nВозраст: " << age << endl << endl;
+	}
+
 
 };
 
-class Point
-{
-public:
-	int x;
-	int y;
-	int z;
-};
 
 
-
-int main (int argc, char* argv[])
+int main ()
 {
 
 	setlocale(LC_ALL, "Rus");
@@ -331,30 +355,44 @@ int main()
 	
 	//Классы:
 
-	Human firstMan;			//Создаем объект класса (Переменную нашего типа данных)
-	Human secondMan;
-
-							//Присваиваем значения свойств age int, объекта firstMan из класса Human;
-	firstMan.age = 24;
-	firstMan.name = "Innokentiy YouNona Pridiskishkiii";
-
-	cout << firstMan.age << endl;
-	cout << firstMan.name << endl;
-	cout << "______________________________________________" << endl; 
+	/*
+						//КЛАССЫ:
+	class Point
+{
+public:
+	int x;
+	int y;
+	int z;
+};
 	
-	//Создаем еще один объект класса Human;
-	Human secondMan;
-	secondMan.age = 11;
-	secondMan.name = "NoName";
 
-	cout << secondMan.age << endl;
-	cout << secondMan.name << endl;
-
+	int main ()
+{
+	
 	Point a;
 
 	a.x = 10;
 	a.y = 22;
 	a.z = 3;
+}
+	
+	*/
+
+	//Методы класса:
+
+	/*
+	
+	
+	*/
+
+	Human firstMan;			//Создаем объект класса (Переменную нашего типа данных)
+
+							//Присваиваем значения свойств age int, объекта firstMan из класса Human;
+	firstMan.age = 24;
+	firstMan.name = "Innokentiy YouNona Pridiskishkiii";
+	firstMan.weight = 56;
+
+	firstMan.Print();		//Вызываем функцию класса
 
 
 
