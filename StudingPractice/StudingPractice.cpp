@@ -357,6 +357,26 @@ public:
 	}
 };
 
+class CoffeeGrinder 
+{
+private:
+	bool CheckVoltage() {
+		return true;
+	}
+
+public:
+	void Start()
+	{
+
+		if (CheckVoltage()) {
+			cout << "VZHHHHuuuh" << endl;
+		}
+		else {
+			cout << "Beep Beep" << endl;
+		}
+	}
+};
+
 int main ()
 {
 
@@ -505,6 +525,37 @@ int main ()
 }
 	*/
 
+	//Инкапсуляция:
+
+	/*
+							//ФУНКЦИИ и КЛАССЫ:
+class CoffeeGrinder
+{
+private:
+	bool CheckVoltage() {
+		return true;
+	}
+
+public:
+	void Start()
+	{
+
+		if (CheckVoltage()) {
+			cout << "VZHHHHuuuh" << endl;
+		}
+		else {
+			cout << "Beep Beep" << endl;
+		}
+	}
+};
+
+int main ()
+{
+	heehee.Start();
+}
+
+	*/
+
 	Human firstMan;			//Создаем объект класса (Переменную нашего типа данных)
 
 							//Присваиваем значения свойств age int, объекта firstMan из класса Human;
@@ -512,12 +563,10 @@ int main ()
 
 	Point a;
 
-	a.Print();
-	a.SetX(60);
-	a.SetY(52);
-	a.Print();
 	
+	CoffeeGrinder heehee;
 
+	heehee.Start();
 
 
 
