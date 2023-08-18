@@ -1121,6 +1121,104 @@ int main()
 
 
 
+					//КЛАССЫ
+
+//Создать класс Tiles(кафель), который будет содержать поля с открытым доступом : 
+//brand, size_h, size_w, price и метод класса getData().В главной функции объявить пару 
+//объектов класса и внести данные в поля.Затем отобразить их, вызвав метод getData()
+
+/*
+						//ФУНКЦИИ и КЛАССЫ:
+
+	class Tiles
+{
+public:
+	int size_h, size_w, price;
+	string brand;
+
+	void GetData()
+	{
+		cout << "Brand = " << brand << "\nSize_h = " << size_h << "\nSize_w = " << size_w << "\nPrice = " << price << endl;
+	}
+};
+
+	int main()
+
+	{
+	Tiles laminat;
+
+	laminat.brand = "SkaSS";
+	laminat.price = 1000;
+	laminat.size_h = 15;
+	laminat.size_w = 45;
+	cout << "laminat: " << endl;
+	laminat.GetData();
+
+	Tiles linolium;
+
+	linolium.brand = "KeeKeee";
+	linolium.price = 34000;
+	linolium.size_h = 12;
+	linolium.size_w = 45;
+	cout << "linolium: " << endl;
+	linolium.GetData();
+	}
+
+	*/
+
+//Определить класс Children, который содержит такие поля(члены класса) : 
+//закрытые – имя ребенка, фамилию и возраст, публичные – методы ввода данных и отображения их на экран.
+//Объявить два объекта класса, внести данные и показать их.
+
+/*
+							//КЛАССЫ:
+	 class Children
+{
+private:
+	string name;
+	string surname;
+	int age;
+
+public:
+	void FillData()
+	{
+		cout << "Name: ";
+		cin >> name;
+
+		cout << "SurName: ";
+		cin >> surname;
+
+		cout << "Age: ";
+		cin >> age;
+	}
+
+	void GetData()
+	{
+		cout << "Name: " << name << "\tSecond Name: " << surname << "\tAge: " << age << endl;
+	}
+};
+
+
+	int main()
+	{
+	Children vasily;
+	cout << "Enter Data: " << endl;
+	vasily.FillData();
+	cout << endl;
+	vasily.GetData();
+
+	Children georgiy;
+	cout << "\nEnter Data: " << endl;
+	georgiy.FillData();
+	cout << endl;
+	georgiy.GetData();
+	}
+
+
+	*/
+
+
+
 
 
 	return 0;
